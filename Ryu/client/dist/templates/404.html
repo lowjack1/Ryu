@@ -1,0 +1,44 @@
+{% extends base.html %} {% block resources_header %}<style>body {
+    background: url('{{ static_url("images/404.png") }}') no-repeat center center fixed;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 2em;
+    overflow: hidden;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: 100%;
+    /* justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    padding: 10rem 4rem;
+}
+
+.box {
+    color: #fff;
+    font: 5em cursive;
+}
+
+.box a {
+    color: #F5B041;
+}
+
+.div-404 {
+    color: #fff;
+    font: 2em cursive;
+    letter-spacing: 0.2em;
+}
+
+.div-back {
+    font-size: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .content-container {
+        padding: 4rem 1rem;
+    }
+}</style>{% end %} {% block main %}<div class="content-container"><div class="box"><div class="div-404">404</div><div class="mb-4">Page Not Found</div><div class="div-back">Back To <a href="/">Ryu</a></div></div></div>{% end %} {% block resources_footer %} {% end %}

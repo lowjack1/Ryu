@@ -1,0 +1,53 @@
+{% extends base.html %}
+
+{% block resources_header %}
+<style>
+body {
+    background: url('{{ static_url("images/invalid_room.jpg") }}') no-repeat center center fixed;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 2em;
+    overflow: hidden;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: 100%;
+    height: 100vh;
+    padding: 10rem 4rem;
+}
+
+.box {
+    color: #fff;
+    font: 5em cursive;
+}
+
+.box a {
+    color: #A569BD;
+}
+
+
+@media screen and (max-width: 768px) {
+    .box {
+        font: 4em cursive;
+    }
+}
+
+</style>
+
+{% end %}
+
+{% block main %}
+<div class="content-container">
+    <div class="box">
+        <div>Invalid Room !!</div>
+        <div class="mt-4">Back To <a href="/">Ryu</a></div>
+    </div>
+</div>
+{% end %}
+
+{% block resources_footer %}
+{% end %}

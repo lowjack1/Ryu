@@ -1,0 +1,117 @@
+body {
+    background: url('../images/space_bg.jpg') no-repeat center center fixed;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 2em;
+    overflow: hidden;
+}
+
+.ryu-label {
+    color: #00FF00;
+    letter-spacing: 0.05em;
+    font-size: 4em;
+    font-family: cursive;
+    font-style: italic;
+    padding-bottom: 0.3em;
+}
+
+.home-label {
+    color: #00FF00;
+    letter-spacing: 0.05em;
+    font-size: 4em;
+    font-family: cursive;
+    font-style: italic;
+    padding-bottom: 0.3em;
+}
+
+.home-label a {
+    color: #FFA500;
+}
+
+.chat-area {
+    background: transparent;
+    border-radius: 2em;
+}
+
+.input-div input {
+    padding: 1.3em;
+    letter-spacing: 0.05em;
+    font-size: 1.3em;
+    color: black!important;
+}
+
+.btn-send-text {
+    letter-spacing: 0.05em;
+    font-size: 1.7em;
+    text-transform: capitalize;
+}
+
+.chat {
+    height: 70vh;
+    overflow: auto;
+    margin-bottom: 2em;
+}
+
+.chat .card-header {
+    padding: 0em 0.8em;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.chat .card-body {
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+.sent-msg {
+    float: right;
+}
+
+.msg-width {
+    width: 55%;
+}
+
+/* Styling for user present in the chat room */
+.user-label {
+    line-height: 1.2em;
+    font: italic 3em cursive;
+    color: #fff;
+}
+
+/* Scroll bar style */
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #BDC3C7; 
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        background: unset;
+        background-color: #1B2631;
+        height: unset;
+        overflow: unset;
+    }
+
+    .ryu-label {
+        display: none;
+    }
+
+    .home-label {
+        text-align: center !important;
+    }
+}
