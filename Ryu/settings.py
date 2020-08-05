@@ -3,6 +3,7 @@ import asyncio
 from os import getenv, makedirs, mkdir, remove
 from os.path import dirname, exists, join, splitext
 from dotenv import load_dotenv
+import logging
 
 import aiohttp
 import asyncpg
@@ -14,6 +15,12 @@ import tornado.options
 from Ryu.handlers import common
 
 ################################################################################################################################
+
+logging.basicConfig(
+    format='[%(asctime)s] p%(thread)s {%(filename)s:%(lineno)d} %(levelname)s - %(message)s',
+    datefmt='%d %b %y %H:%M:%S',
+    level=logging.DEBUG
+)
 
 tornado.options.define("port", default=8080, help="run on the given port", type=int)
 tornado.options.define("env", default="dev", help="default runtime environment")
