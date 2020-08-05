@@ -5,6 +5,10 @@ function sendMessage() {
     let msg_input_el = $('input[name="msg_input"]');
     let message = msg_input_el.val().trim();
     
+    if(message == '') {
+        return;
+    }
+
     let user_id = parseInt($('input[name="user_id"]').val());
     let username = $('input[name="username"]').val();
     let userroom = $('input[name="userroom"]').val();
