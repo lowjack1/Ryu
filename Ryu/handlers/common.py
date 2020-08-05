@@ -140,7 +140,12 @@ class APIHandler(BaseHandler):
 
 
         if self.get_argument('join_room', None) is not None:
-            room_id = int(self.get_body_argument('user_room'))
+            room_id = self.get_body_argument('user_room')
+            
+            if not room_id.isdigit():
+                return self.redirect("/invalid_room")
+
+            room_id = int(room_id)
             async with self.settings['pool'].acquire() as connection:
                 q = "SELECT room_exit FROM ryu_room WHERE ID=$1;"
                 room_exit = await connection.fetchval(q, room_id)

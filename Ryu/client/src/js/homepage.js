@@ -52,3 +52,8 @@ function createUserSession() {
     });
     return promise;
 }
+
+function CopyToClipboard() {
+    $('input[name="user_room"]').select();
+    document.execCommand("copy");
+}
