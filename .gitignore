@@ -1,2 +1,4 @@
 __pycache__
-*/pycache__
+*/pycache_
+Ryu/client/build/
+Ryu/client/node_modules/
