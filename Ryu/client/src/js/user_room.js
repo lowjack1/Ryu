@@ -17,7 +17,7 @@ function sendMessage() {
         "user_id": user_id,
         "username": username,
         "room": userroom,
-        "message": message,
+        "message": btoa(message),
     };
 
     // Make the request to the WebSocket.
@@ -51,7 +51,7 @@ function updateMessages(msg_obj, current_user_id) {
     $.each(msg_obj.messages, function(_, data) {
         let user_id = data[0];
         let username = data[1];
-        let msg = data[2];
+        let msg = atob(data[2]);
 
         html += `
             <div class="card msg-width ${user_id ==  current_user_id? 'sent-msg': ''}">
@@ -95,7 +95,7 @@ function showCurrentMessage(messageDict, current_user_id) {
                 ${messageDict.username}
             </div>
             <div class="card-body">
-                ${messageDict.message}
+                ${atob(messageDict.message)}
             </div>
         </div>`;
     $('.chat').append(msg_html);
