@@ -67,11 +67,14 @@ class WebSocket(tornado.websocket.WebSocketHandler, BaseHandler):
 
                     # Get latest 10 msg from the room
                     q = '''
-                        SELECT RU.ID, RU.name, RC.msg
-                        FROM ryu_conversation AS RC
-                        INNER JOIN ryu_user AS RU ON RU.ID=RC.user_id
-                        WHERE room_id=$1
-                        ORDER BY RC.date_sent DESC LIMIT 10;
+                        SELECT MSG.ID, MSG.name, MSG.msg
+                        FROM (
+                            SELECT RU.ID AS ID, RU.name AS name, RC.msg AS msg, RC.date_sent AS date_sent
+                            FROM ryu_conversation AS RC
+                            INNER JOIN ryu_user AS RU ON RU.ID=RC.user_id
+                            WHERE room_id=$1
+                            ORDER BY RC.date_sent DESC LIMIT 10
+                        ) AS MSG ORDER BY MSG.date_sent ASC;
                         '''
                     res = await connection.fetch(q, self.room)
                     messages = [(_['id'], _['name'], _['msg']) for _ in res]
