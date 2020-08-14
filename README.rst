@@ -7,9 +7,9 @@ Details
 --------
 
 
-:Author: `Lowjack <https://github.com/lowjack1>`_.
+:Author: `Lowjack <https://github.com/lowjack1>`_
 :Email: harshit11541@gmail.com
-:Author: `Masterbios <https://github.com/masterbios>`_.
+:Author: `Masterbios <https://github.com/masterbios>`_
 :Email: ankitkp88534@gmail.com
 
 
