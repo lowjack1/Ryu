@@ -13,10 +13,6 @@ Details
 :Email: ankitkp88534@gmail.com
 
 
-Live Project
-------------
-**Link :** http://ryulow.cf/
-
 Blogs
 ------------
 `Ryu — A Chat Server in Tornado <https://medium.com/@lightl1018/ryu-a-chat-server-in-tornado-b3b573ab03b6>`_.
